@@ -11,7 +11,7 @@ Persona 1 has a version of CodeBreaker where you need to enter 9 unique numbers 
 Download the latest version:
 https://github.com/fraserelliott/CodeBreakerBreaker/releases/tag/v.1.0.0
 
-Feel free to contact me if you have any suggestions for or issues with the program.
-Twitch - FraserNotFrasier
-Discord - frasernotfrasier#2693
+Feel free to contact me if you have any suggestions for or issues with the program.<br>
+Twitch - FraserNotFrasier<br>
+Discord - frasernotfrasier#2693<br>
 Email - fraserelliott@hotmail.com
