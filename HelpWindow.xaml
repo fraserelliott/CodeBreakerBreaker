@@ -1,0 +1,25 @@
+﻿<Window x:Class="CodeBreakerBreaker.HelpWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CodeBreakerBreaker"
+        mc:Ignorable="d"
+        Title="CodeBreakerBreaker - Help" Height="400" Width="631" ResizeMode="CanMinimize" SizeToContent="Height" >
+    <Grid>
+        <RichTextBox Margin="10,10,10,10" IsEnabled="False">
+            <FlowDocument>
+                <Paragraph FontSize="22">
+                    <Run Text="How to use this:"/>
+                    <LineBreak />
+                    <LineBreak />
+                    <Run Text="Enter the numbers with no background into the 3x3 grid in the game, then enter the numbers from the orange and green columns into the corresponding columns in here. After you click on Compute, it will update your next guess and reset the orange and green columns for you. Keep repeating this with the new, updated 3x3 grid each time until you win."/>
+                    <LineBreak />
+                    <LineBreak />
+                    <Run Text="If there is a 0 in a box, you do not need to type this. It will validate the numbers for you and set it to 0 if it has been left empty."/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
+    </Grid>
+</Window>

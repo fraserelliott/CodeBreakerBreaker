@@ -25,9 +25,13 @@ namespace CodeBreakerBreaker
         Grid guess;
         Grid trial;
 
+        HelpWindow helpWindow;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            helpWindow = new HelpWindow();
 
             Reset();
         }
@@ -191,8 +195,8 @@ namespace CodeBreakerBreaker
 
             if (potentialSolutions.Count > 0)
             {
-                //Update guess to be the first potential solution
-                guess = new Grid(potentialSolutions[0]);
+                //Update guess to be the one with the fewest total changes required
+                CalculateNextGuess();
 
                 UpdateGuessTextBoxes();
             }
@@ -215,6 +219,24 @@ namespace CodeBreakerBreaker
             UpdateInputs();
 
             System.Console.WriteLine("Finished computing");
+        }
+
+        private void CalculateNextGuess()
+        {
+            int besti = -1;
+            int lowestMoves = -1;
+
+            for(int i=0; i<potentialSolutions.Count; i++)
+            {
+                int difference = Grid.CalculateDifference(guess, potentialSolutions[i]);
+                if (lowestMoves == -1 || difference < lowestMoves)
+                {
+                    besti = i;
+                    lowestMoves = difference;
+                }
+            }
+
+            guess = potentialSolutions[besti];
         }
 
         private bool ValidateInput(TextBox tbInput)
@@ -245,6 +267,11 @@ namespace CodeBreakerBreaker
         {
             return ValidateInput(RowH_0) && ValidateInput(RowH_1) && ValidateInput(RowH_2) && ValidateInput(ColH_0) && ValidateInput(ColH_1) && ValidateInput(ColH_2)
             && ValidateInput(RowB_0) && ValidateInput(RowB_1) && ValidateInput(RowB_2) && ValidateInput(ColB_0) && ValidateInput(ColB_1) && ValidateInput(ColB_2);
+        }
+
+        private void Help_Button_Click(object sender, RoutedEventArgs e)
+        {
+            helpWindow.Show();
         }
     }
 }

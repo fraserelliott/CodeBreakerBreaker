@@ -44,7 +44,6 @@ namespace CodeBreakerBreaker
                 }
             }
         }
-
         public bool Equals(GridComparison other)
         {
             for (int i = 0; i < 3; i++)

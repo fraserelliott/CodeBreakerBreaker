@@ -5,13 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CodeBreakerBreaker"
         mc:Ignorable="d"
-        Title="CodeBreaker Breaker" Height="520" Width="954" ResizeMode="NoResize">
+        Title="CodeBreaker Breaker" Height="520" Width="371" ResizeMode="CanMinimize" SizeToContent="WidthAndHeight">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="155*"/>
-            <ColumnDefinition Width="42*"/>
-            <ColumnDefinition Width="734*"/>
-        </Grid.ColumnDefinitions>
         <TextBox HorizontalAlignment="Left" Margin="39,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Height="56" FontSize="40" TextAlignment="Center" Cursor="Wait" IsEnabled="False" MaxLength="1" x:Name="Guess_0_0" Text="1" />
         <TextBox HorizontalAlignment="Left" Margin="86,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Height="56" FontSize="40" TextAlignment="Center" Cursor="Wait" IsEnabled="False" MaxLength="1" x:Name="Guess_1_0" Text="2" />
         <TextBox HorizontalAlignment="Left" Margin="133,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Height="56" FontSize="40" TextAlignment="Center" Cursor="Wait" IsEnabled="False" MaxLength="1" x:Name="Guess_2_0" Text="3" Grid.ColumnSpan="2" />
@@ -22,12 +17,12 @@
         <TextBox HorizontalAlignment="Left" Margin="86,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Height="56" FontSize="40" TextAlignment="Center" Cursor="Wait" IsEnabled="False" MaxLength="1" x:Name="Guess_1_2" Text="8" />
         <TextBox HorizontalAlignment="Left" Margin="133,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Height="56" FontSize="40" TextAlignment="Center" Cursor="Wait" IsEnabled="False" MaxLength="1" x:Name="Guess_2_2" Text="9" Grid.ColumnSpan="2" />
 
-        <TextBox HorizontalAlignment="Left" Margin="25,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Height="56" FontSize="40" TextAlignment="Center" Cursor="Wait" MaxLength="1" x:Name="RowH_0" Background="Orange" Foreground="White" Grid.ColumnSpan="2" Grid.Column="1" />
-        <TextBox HorizontalAlignment="Left" Margin="30,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Height="56" FontSize="40" TextAlignment="Center" Cursor="Wait" MaxLength="1" x:Name="RowB_0" Background="Green" Foreground="White" Grid.Column="2"/>
-        <TextBox HorizontalAlignment="Left" Margin="25,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Height="56" FontSize="40" TextAlignment="Center" Cursor="Wait" MaxLength="1" x:Name="RowH_1" Background="Orange" Foreground="White" Grid.ColumnSpan="2" Grid.Column="1" />
-        <TextBox HorizontalAlignment="Left" Margin="30,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Height="56" FontSize="40" TextAlignment="Center" Cursor="Wait" MaxLength="1" x:Name="RowB_1" Background="Green" Foreground="White" Grid.Column="2" />
-        <TextBox HorizontalAlignment="Left" Margin="25,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Height="56" FontSize="40" TextAlignment="Center" Cursor="Wait" MaxLength="1" x:Name="RowH_2" Background="Orange" Foreground="White" Grid.ColumnSpan="2" Grid.Column="1" />
-        <TextBox HorizontalAlignment="Left" Margin="30,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Height="56" FontSize="40" TextAlignment="Center" Cursor="Wait" MaxLength="1" x:Name="RowB_2" Background="Green" Foreground="White" Grid.Column="2" />
+        <TextBox HorizontalAlignment="Left" Margin="180,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Height="56" FontSize="40" TextAlignment="Center" Cursor="Wait" MaxLength="1" x:Name="RowH_0" Background="Orange" Foreground="White" />
+        <TextBox HorizontalAlignment="Left" Margin="227,34,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Height="56" FontSize="40" TextAlignment="Center" Cursor="Wait" MaxLength="1" x:Name="RowB_0" Background="Green" Foreground="White"/>
+        <TextBox HorizontalAlignment="Left" Margin="180,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Height="56" FontSize="40" TextAlignment="Center" Cursor="Wait" MaxLength="1" x:Name="RowH_1" Background="Orange" Foreground="White" />
+        <TextBox HorizontalAlignment="Left" Margin="227,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Height="56" FontSize="40" TextAlignment="Center" Cursor="Wait" MaxLength="1" x:Name="RowB_1" Background="Green" Foreground="White" />
+        <TextBox HorizontalAlignment="Left" Margin="180,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Height="56" FontSize="40" TextAlignment="Center" Cursor="Wait" MaxLength="1" x:Name="RowH_2" Background="Orange" Foreground="White" />
+        <TextBox HorizontalAlignment="Left" Margin="227,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Height="56" FontSize="40" TextAlignment="Center" Cursor="Wait" MaxLength="1" x:Name="RowB_2" Background="Green" Foreground="White" />
         <TextBox HorizontalAlignment="Left" Margin="39,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Height="56" FontSize="40" TextAlignment="Center" Cursor="Wait" MaxLength="1" x:Name="ColH_0" Background="Orange" Foreground="White" />
         <TextBox HorizontalAlignment="Left" Margin="86,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Height="56" FontSize="40" TextAlignment="Center" Cursor="Wait" MaxLength="1" x:Name="ColH_1" Background="Orange" Foreground="White" />
         <TextBox HorizontalAlignment="Left" Margin="133,217,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Height="56" FontSize="40" TextAlignment="Center" Cursor="Wait" MaxLength="1" x:Name="ColH_2" Background="Orange" Foreground="White" Grid.ColumnSpan="2" />
@@ -35,27 +30,15 @@
         <TextBox HorizontalAlignment="Left" Margin="86,278,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Height="56" FontSize="40" TextAlignment="Center" Cursor="Wait" MaxLength="1" x:Name="ColB_1" Background="Green" Foreground="White" />
         <TextBox HorizontalAlignment="Left" Margin="133,278,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="42" Height="56" FontSize="40" TextAlignment="Center" Cursor="Wait" MaxLength="1" x:Name="ColB_2" Background="Green" Foreground="White" Grid.ColumnSpan="2" />
 
-        <Label Content="H" HorizontalAlignment="Left" Margin="29,217,0,0" VerticalAlignment="Top" FontSize="35" Foreground="Orange" Background="Gray" Grid.ColumnSpan="2" Grid.Column="1" />
-        <Label Content="B" HorizontalAlignment="Left" Margin="36,217,0,0" VerticalAlignment="Top" FontSize="35" Foreground="Orange" Background="Gray" Grid.Column="2" />
-        <Label Content="B" HorizontalAlignment="Left" Margin="31,279,0,0" VerticalAlignment="Top" FontSize="35" Foreground="Orange" Background="Gray" Grid.ColumnSpan="2" Grid.Column="1" />
+        <Label Content="H" HorizontalAlignment="Left" Margin="184,217,0,0" VerticalAlignment="Top" FontSize="35" Foreground="Orange" Background="Gray" Height="57" Width="34" />
+        <Label Content="B" HorizontalAlignment="Left" Margin="233,217,0,0" VerticalAlignment="Top" FontSize="35" Foreground="Orange" Background="Gray" Height="57" Width="30" />
+        <Label Content="B" HorizontalAlignment="Left" Margin="186,278,0,0" VerticalAlignment="Top" FontSize="35" Foreground="Orange" Background="Gray" Height="56" Width="30" />
 
-        <Button Content="Compute" HorizontalAlignment="Left" Margin="39,359,0,0" VerticalAlignment="Top" FontSize="30" Click="Button_Compute_Click" Grid.ColumnSpan="2"/>
-        <Button Content="Reset" HorizontalAlignment="Left" Margin="29,359,0,0" VerticalAlignment="Top" FontSize="30" Click="Button_Reset_Click" Grid.ColumnSpan="2" Grid.Column="1"/>
+        <Button Content="Compute" HorizontalAlignment="Left" Margin="39,359,0,0" VerticalAlignment="Top" FontSize="30" Click="Button_Compute_Click" Grid.ColumnSpan="2" Height="44" Width="126"/>
+        <Button Content="Reset" HorizontalAlignment="Left" Margin="188,359,0,0" VerticalAlignment="Top" FontSize="30" Click="Button_Reset_Click" Height="44" Width="75"/>
 
-        <Label Content="Potential solutions: " HorizontalAlignment="Left" Margin="39,425,0,0" VerticalAlignment="Top"/>
-        <Label Content="" HorizontalAlignment="Left" Margin="152,425,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.053,-0.191" x:Name="LabelPotentialSolutions" Grid.ColumnSpan="3" Width="161" />
-        <RichTextBox Margin="109,22,10,101" IsEnabled="False" Grid.Column="2">
-            <FlowDocument>
-                <Paragraph FontSize="22">
-                    How to use this:
-                    <LineBreak />
-                    <LineBreak />
-                    Enter the numbers with no background into the 3x3 grid in the game, then enter the numbers from the orange and green columns into the corresponding columns in here. After you click on Compute, it will update your next guess and reset the orange and green columns for you. Keep repeating this with the new, updated 3x3 grid each time until you win.
-                    <LineBreak />
-                    <LineBreak />
-                    If there is a 0 in a box, you do not need to type this. It will validate the numbers for you and set it to 0 if it has been left empty.
-                </Paragraph>
-            </FlowDocument>
-        </RichTextBox>
+        <Label Content="Potential solutions: " HorizontalAlignment="Left" Margin="39,425,0,0" VerticalAlignment="Top" Height="26" Width="113"/>
+        <Label Content="" HorizontalAlignment="Left" Margin="152,425,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.053,-0.191" x:Name="LabelPotentialSolutions" Grid.ColumnSpan="2" Width="161" Height="26" />
+        <Button Content="?" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="27" Width="18" Click="Help_Button_Click"/>
     </Grid>
 </Window>

@@ -127,5 +127,20 @@ namespace CodeBreakerBreaker
         {
             return new GridComparison(this, guess);
         }
+
+        public static int CalculateDifference(Grid a, Grid b)
+        {
+            int difference = 0;
+
+            for (int j = 0; j < 3; j++)
+            {
+                for (int i = 0; i < 3; i++)
+                {
+                    difference += Math.Abs(a.numbers[i, j] - a.numbers[i, j]);
+                }
+            }
+
+            return difference;
+        }
     }
 }
