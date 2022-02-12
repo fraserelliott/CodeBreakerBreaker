@@ -44,29 +44,6 @@ namespace CodeBreakerBreaker
                 }
             }
         }
-        /*
-                public bool Equals(GridComparison other)
-                {
-                    return ArrayEquals(ColH, other.ColH) && ArrayEquals(RowH, other.RowH) && ArrayEquals(ColB, other.ColB) && ArrayEquals(RowB, other.RowB);
-                }
-
-                private static bool ArrayEquals(int[] a, int[] b)
-                {
-                    if (a.Length != b.Length)
-                    {
-                        return false;
-                    }
-
-                    for(int i=0; i<a.Length; i++)
-                    {
-                        if(a[i] != b[i])
-                        {
-                            return false;
-                        }
-                    }
-
-                    return true;
-                }*/
 
         public bool Equals(GridComparison other)
         {
