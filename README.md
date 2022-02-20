@@ -1,6 +1,6 @@
 # CodeBreakerBreaker
 
-CodeBreakerBreaker (v1.1.0) by Fraser Elliott aka FraserNotFrasier
+CodeBreakerBreaker (v1.1.2) by Fraser Elliott aka FraserNotFrasier
 
 # What is this?
 
