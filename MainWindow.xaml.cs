@@ -273,5 +273,11 @@ namespace CodeBreakerBreaker
         {
             helpWindow.Show();
         }
+
+        private void TextBox_SelectAll(object sender, RoutedEventArgs e)
+        {
+            TextBox TbSender = sender as TextBox;
+            TbSender.SelectAll();
+        }
     }
 }
