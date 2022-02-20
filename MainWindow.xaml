@@ -20,6 +20,8 @@
             <Setter Property="Margin" Value="3" />
             <EventSetter Event="GotFocus" Handler="TextBox_SelectAll" />
             <EventSetter Event="TextChanged" Handler="TextBox_SelectAll" />
+            <EventSetter Event="LostFocus" Handler="TextBox_LostFocus" />
+            <EventSetter Event="PreviewMouseLeftButtonDown" Handler="SelectivelyIgnoreMouseButton" />
         </Style>
 
         <Style BasedOn="{StaticResource InputTextBox}" x:Key="GuessTextBox" TargetType="TextBox">

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -274,10 +275,33 @@ namespace CodeBreakerBreaker
             helpWindow.Show();
         }
 
+        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox TbSender = sender as TextBox;
+            if (TbSender != null)
+            {
+                ValidateInput(TbSender);
+            }
+        }
+
         private void TextBox_SelectAll(object sender, RoutedEventArgs e)
         {
             TextBox TbSender = sender as TextBox;
-            TbSender.SelectAll();
+            if (TbSender != null)
+            {
+                TbSender.SelectAll();
+            }
         }
+
+        private void SelectivelyIgnoreMouseButton(object sender, MouseButtonEventArgs e)
+        {
+            TextBox TbSender = sender as TextBox;
+            if (TbSender != null)
+            {
+                TbSender.Focus();
+                e.Handled = true;
+            }
+        }
+
     }
 }
