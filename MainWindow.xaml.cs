@@ -54,19 +54,9 @@ namespace CodeBreakerBreaker
                 }
             }
 
-            if(!guess.Validate())
-            {
-                System.Console.WriteLine("Error validating guess grid");
-                return;
-            }
-
             trial = new Grid();
             potentialSolutions = new List<Grid>();
             potentialComparisons = new List<GridComparison>();
-
-            System.Console.WriteLine("Generating comparisons for: ");
-            guess.Print();
-            System.Console.WriteLine();
 
 
             //Generate a pool of numbers from 1 to 9
@@ -82,8 +72,6 @@ namespace CodeBreakerBreaker
             UpdateGuessTextBoxes();
 
             UpdateInputs();
-
-            System.Console.WriteLine("Finished generating");
         }
 
         public void UpdateInputs()
@@ -155,9 +143,18 @@ namespace CodeBreakerBreaker
 
         private void Button_Compute_Click(object sender, RoutedEventArgs e)
         {
-            if(!ValidateInputs())
+            //for each remaining potential solution, generate new potential comparisons as we will be comparing against a different grid now
+            potentialComparisons = new List<GridComparison>();
+
+            foreach (Grid trial in potentialSolutions)
             {
-                MessageBox.Show("Inputs are incorrect. Please enter either 0, 1, 2 or 3 in each box, or leave it blank");
+                potentialComparisons.Add(trial.Compare(guess));
+            }
+
+            //Check if inputs are valid before proceeding
+            if (!ValidateInputs())
+            {
+                MessageBox.Show("Inputs are incorrect. Please enter either 0, 1, 2 or 3 in each H or B box, 1-9 in each guess box or leave it blank");
                 return;
             }
 
@@ -176,10 +173,6 @@ namespace CodeBreakerBreaker
             inputComparison.ColB[1] = Int32.Parse(ColB_1.Text);
             inputComparison.ColB[2] = Int32.Parse(ColB_2.Text);
 
-
-            System.Console.WriteLine("Computing remaining solutions for: ");
-            inputComparison.Print();
-
             List<Grid> newsolutions = new List<Grid>();
 
             for (int i=0;  i < potentialComparisons.Count; i++)
@@ -189,6 +182,14 @@ namespace CodeBreakerBreaker
                     //This could be a solution so we should keep it
                     newsolutions.Add(potentialSolutions[i]);
                 }
+            }
+
+            //Check if there are any potential solutions left
+            if (newsolutions.Count == 0)
+            {
+                //If not then break here and ask the user to re-try
+                MessageBox.Show("Error: no solutions found. Please check input and re-enter");
+                return;
             }
 
             //Update solution list
@@ -201,25 +202,10 @@ namespace CodeBreakerBreaker
 
                 UpdateGuessTextBoxes();
             }
-            else
-            {
-                MessageBox.Show("Error: no solutions found. Resetting data.");
-                Reset();
-            }
-
-            //for each remaining potential solution, generate new potential comparisons as we will be comparing against a different grid now
-            potentialComparisons = new List<GridComparison>();
-
-            foreach (Grid trial in potentialSolutions)
-            {
-                potentialComparisons.Add(trial.Compare(guess));
-            }
 
             UpdatePotentialSolutionsLabel();
 
             UpdateInputs();
-
-            System.Console.WriteLine("Finished computing");
         }
 
         private void CalculateNextGuess()
@@ -240,7 +226,7 @@ namespace CodeBreakerBreaker
             guess = potentialSolutions[besti];
         }
 
-        private bool ValidateInput(TextBox tbInput)
+        private bool ValidateInput(TextBox tbInput, bool isGuess)
         {
             //Check if this is numerical and in [0,3], if not then set to 0
             if (tbInput.Text == "")
@@ -253,7 +239,12 @@ namespace CodeBreakerBreaker
                 tbInput.Text = "";
                 return false;
             }
-            else if (i < 0 || i > 3)
+            else if (isGuess && (i < 1 || i > 9))
+            {
+                tbInput.Text = "1";
+                return false;
+            }
+            else if (!isGuess && (i < 0 || i > 3))
             {
                 tbInput.Text = "0";
                 return false;
@@ -266,8 +257,8 @@ namespace CodeBreakerBreaker
 
         private bool ValidateInputs()
         {
-            return ValidateInput(RowH_0) && ValidateInput(RowH_1) && ValidateInput(RowH_2) && ValidateInput(ColH_0) && ValidateInput(ColH_1) && ValidateInput(ColH_2)
-            && ValidateInput(RowB_0) && ValidateInput(RowB_1) && ValidateInput(RowB_2) && ValidateInput(ColB_0) && ValidateInput(ColB_1) && ValidateInput(ColB_2);
+            return ValidateInput(RowH_0, false) && ValidateInput(RowH_1, false) && ValidateInput(RowH_2, false) && ValidateInput(ColH_0, false) && ValidateInput(ColH_1, false) && ValidateInput(ColH_2, false)
+            && ValidateInput(RowB_0, false) && ValidateInput(RowB_1, false) && ValidateInput(RowB_2, false) && ValidateInput(ColB_0, false) && ValidateInput(ColB_1, false) && ValidateInput(ColB_2, false);
         }
 
         private void Help_Button_Click(object sender, RoutedEventArgs e)
@@ -280,7 +271,16 @@ namespace CodeBreakerBreaker
             TextBox TbSender = sender as TextBox;
             if (TbSender != null)
             {
-                ValidateInput(TbSender);
+                ValidateInput(TbSender, false);
+            }
+        }
+
+        private void GuessTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox TbSender = sender as TextBox;
+            if (TbSender != null)
+            {
+                ValidateInput(TbSender, true);
             }
         }
 
@@ -303,5 +303,46 @@ namespace CodeBreakerBreaker
             }
         }
 
+        private void Button_Toggle_Unlock_Click(Object sender, RoutedEventArgs e)
+        {
+            if(Guess_0_0.IsEnabled)
+            {
+                LockInputs();
+            } 
+            else
+            {
+                UnlockInputs();
+            }
+        }
+
+        private void UnlockInputs()
+        {
+            Guess_0_0.IsEnabled = true;
+            Guess_1_0.IsEnabled = true;
+            Guess_2_0.IsEnabled = true;
+            Guess_0_1.IsEnabled = true;
+            Guess_1_1.IsEnabled = true;
+            Guess_2_1.IsEnabled = true;
+            Guess_0_2.IsEnabled = true;
+            Guess_1_2.IsEnabled = true;
+            Guess_2_2.IsEnabled = true;
+
+            BtnToggleUnlock.Content = "Lock Guess";
+        }
+
+        private void LockInputs()
+        {
+            Guess_0_0.IsEnabled = false;
+            Guess_1_0.IsEnabled = false;
+            Guess_2_0.IsEnabled = false;
+            Guess_0_1.IsEnabled = false;
+            Guess_1_1.IsEnabled = false;
+            Guess_2_1.IsEnabled = false;
+            Guess_0_2.IsEnabled = false;
+            Guess_1_2.IsEnabled = false;
+            Guess_2_2.IsEnabled = false;
+
+            BtnToggleUnlock.Content = "Unlock Guess";
+        }
     }
 }

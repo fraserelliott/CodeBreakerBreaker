@@ -20,7 +20,7 @@
             <Setter Property="Margin" Value="3" />
             <EventSetter Event="GotFocus" Handler="TextBox_SelectAll" />
             <EventSetter Event="TextChanged" Handler="TextBox_SelectAll" />
-            <EventSetter Event="LostFocus" Handler="TextBox_LostFocus" />
+            <EventSetter Event="LostFocus" Handler="GuessTextBox_LostFocus" />
             <EventSetter Event="PreviewMouseLeftButtonDown" Handler="SelectivelyIgnoreMouseButton" />
         </Style>
 
@@ -31,11 +31,13 @@
         <Style BasedOn="{StaticResource InputTextBox}" x:Key="HTextBox" TargetType="TextBox">
             <Setter Property="Background" Value="Orange" />
             <Setter Property="Foreground" Value="White" />
+            <EventSetter Event="LostFocus" Handler="TextBox_LostFocus" />
         </Style>
 
         <Style BasedOn="{StaticResource InputTextBox}" x:Key="BTextBox" TargetType="TextBox">
             <Setter Property="Background" Value="Green" />
             <Setter Property="Foreground" Value="White" />
+            <EventSetter Event="LostFocus" Handler="TextBox_LostFocus" />
         </Style>
     </Window.Resources>
 
@@ -109,8 +111,9 @@
 
         <Border Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Left" VerticalAlignment="Top">
             <WrapPanel>
-                <Button Padding="5" Margin="5" FontSize="30" Click="Button_Compute_Click">Compute</Button>
-                <Button Padding="5" Margin="5" FontSize="30" Click="Button_Reset_Click">Reset</Button>
+                <Button Padding="5" Margin="5" FontSize="20" Click="Button_Compute_Click">Compute</Button>
+                <Button Padding="5" Margin="5" FontSize="20" Click="Button_Reset_Click">Reset</Button>
+                <Button Name="BtnToggleUnlock"  Padding="5" Margin="5" FontSize="20" Click="Button_Toggle_Unlock_Click">Unlock Guess</Button>
             </WrapPanel>
         </Border>
 
