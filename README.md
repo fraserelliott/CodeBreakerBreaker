@@ -6,10 +6,10 @@ CodeBreakerBreaker (v1.1.0) by Fraser Elliott aka FraserNotFrasier
 
 Persona 1 has a version of CodeBreaker where you need to enter 9 unique numbers across a 3x3 board. The numbers in the H column/row are how many are in the correct position, and the numbers in the B column/row are how many are in that row/column but are not exactly in the correct position.
 
-![image](https://user-images.githubusercontent.com/2152517/153039726-29deda88-7bce-4eb7-abfc-8d93d00b1f27.png)
+![image](https://user-images.githubusercontent.com/2152517/154847163-08ff09fa-a702-43df-a4e8-42b007f4d6ab.png)
 
 Download the latest version:
-https://github.com/fraserelliott/CodeBreakerBreaker/releases/tag/v1.1.0
+https://github.com/fraserelliott/CodeBreakerBreaker/releases/tag/v1.1.1
 
 Feel free to contact me if you have any suggestions for or issues with the program.<br>
 Twitch - FraserNotFrasier<br>
