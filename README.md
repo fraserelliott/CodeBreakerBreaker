@@ -1,6 +1,6 @@
 # CodeBreakerBreaker
 
-CodeBreakerBreaker (v1.1.2) by Fraser Elliott aka FraserNotFrasier
+CodeBreakerBreaker (v1.1.2) by Fraser aka FraserNotFrasier
 
 # What is this?
 
@@ -12,6 +12,4 @@ Download the latest version:
 https://github.com/fraserelliott/CodeBreakerBreaker/releases/tag/v1.1.2
 
 Feel free to contact me if you have any suggestions for or issues with the program.<br>
-Twitch - FraserNotFrasier<br>
 Discord - frasernotfrasier#2693<br>
-Email - fraserelliott@hotmail.com
